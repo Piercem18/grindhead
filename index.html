@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .video-container {
+            position: relative;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="woodHeader">
+        <div class="logo">
+            <img class="logo" src="images/logogrindheadsmall.png" alt="logo">
+        </div>
+    </div>
+    <div class="financeHeader">
+        <h1>Financing Portal</h1>
+    </div>
+    <div class="softPull">
+        <div class="video">
+            <div class="buttons">
+                <button id="playButton" class="play-button">PLAY VIDEO</button>
+                <button id="muteButton" class="mute-button">Mute</button>
+            </div>
+            <div class="video-container">
+               
+                <video id="myVideo" class="video-background" preload="auto">
+                    <source src="images/merge_0B15B115-ABBE-4C58-BB91-6D02B4AC07DC.mp4" type="video/mp4">
+                    <!-- Add additional <source> elements for other formats -->
+                    Your browser does not support the video tag.
+                </video>
+               
+               
+            </div>
+        </div>
+        <div class="formDiv">
+            <iframe class="form" src="https://app.isoftpull.com/forms/76a82941-26e2-400d-b018-b5aa5ac832ce/2292a991-62d9-4c5a-84a2-ae6533f317d2" title="iSoftpull Form" width="700" height="700" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </div>
+    <div class="footer">
+        <img class="trailer" src="images/trailer.png">
+        <div class="link">
+            <a href="https://zfrmz.com/4YTx9kpqTz0hsMClfWDf">Click here to access the finance application directly</a>
+            <h2>Questions? Text 407.883.6562</h2>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('myVideo');
+            const playButton = document.getElementById('playButton');
+            const muteButton = document.getElementById('muteButton');
+
+            // Play button functionality
+            playButton.addEventListener('click', () => {
+                video.play().then(() => {
+                    playButton.style.display = 'none'; // Hide the play button when video starts
+                }).catch((error) => {
+                    console.log('Video playback error:', error);
+                });
+            });
+
+            // Mute button functionality
+            muteButton.addEventListener('click', () => {
+                if (video.muted) {
+                    video.muted = false;
+                    muteButton.textContent = 'Mute';
+                } else {
+                    video.muted = true;
+                    muteButton.textContent = 'Unmute';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
